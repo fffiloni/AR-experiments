@@ -1,0 +1,64 @@
+<head>
+  <title>My A-Frame Scene</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script>THREEx.ArToolkitContext.baseURL = "https://rawgit.com/jeromeetienne/ar.js/master/three.js/"</script>
+
+  <!-- NOTE: somehow `aframe-video-shader` makes error 😢 so it's been `aframe-vid-shader.min.js` for now -->
+
+  <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
+</head>
+
+<body>
+  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
+
+    <!-- assets -->
+    <a-assets>
+      <video id="vid" src="https://cdn.glitch.com/e56c7b61-7531-4232-a4a2-a3b1b9a36a5f%2FTIkal.mp4" muted webkit-playsinline autoplay loop></video>
+    </a-assets>
+
+    <a-marker preset="hiro" markerhandler emitevents="true" id="hiroMarker">
+
+      <a-entity geometry="primitive:plane; width: 2; height: 1.25" material="shader:video;src:#bbb;" rotation="-90 0 0"></a-entity>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+  </a-scene>
+
+  <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/examples/common.js"></script>
+
+  <!-- TOGGLE A PLAY/PAUSE EVENT ON VIDEO ELEMENT
+  <script type="text/javascript">
+    function togglePlayback () {
+      var el = document.getElementById('vid')
+      var material = Object.assign({}, el.getAttribute('material'))
+      material.pause = !material.pause
+      el.setAttribute('material', material)
+    }
+  </script>
+  -->
+
+  <script>
+    AFRAME.registerComponent('markerhandler', {
+        init: function() {
+          // Set up the tick throttling. Will check if marker is active every 500ms
+          this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+        },
+        tick: function(t, dt) {
+          if (document.querySelector("#hiroMarker").object3D.visible == true) {
+            // MARKER IS PRESENT
+            //alert("MARKER IS PRESENT")
+            console.log("marker is present");
+
+          } else {
+            // MARKER IS HIDDEN, do nothing (up to you)
+            //onsole.log("marker is not present");
+          }
+        }
+      }
+    );
+  </script>
+</body>
