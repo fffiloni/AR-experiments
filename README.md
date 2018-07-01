@@ -82,3 +82,8 @@ function togglePlayback () {
 ### Important Notice
 
 Don't forget to serve your files from a HTTPS secure connection, then it should work properly on iOS Safari.
+
+### Credits
+
+Some templates borrow works from Jérôme Etienne, Mayognaise, Lee Stemkoski
+Some 3D models come from poly.google.com 
