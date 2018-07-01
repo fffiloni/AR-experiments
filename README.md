@@ -58,3 +58,21 @@
   );
 </script>
 ```
+
+### Fix to make videos working properly on mobile
+
+- Add `<meta name="apple-mobile-web-app-capable" content="yes">` in HEAD
+- Your video asset needs this attribute: webkit-playsinline
+`<video id="video" src="videos/video.mp4" muted webkit-playsinline autoplay loop></video>`
+- Add this before the body end tag:
+```html
+<script type="text/javascript">
+function togglePlayback () {
+  var el = document.getElementById('video') // or vid ?
+  var material = Object.assign({}, el.getAttribute('material'))
+  material.pause = !material.pause
+  el.setAttribute('material', material)
+}
+</script>
+
+```
