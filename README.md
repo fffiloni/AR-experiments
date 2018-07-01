@@ -61,6 +61,8 @@
 
 ### Fix to make videos working properly on mobile
 
+Your video asset must be serve from the same domain if you want to play it on iOS
+
 - Add `<meta name="apple-mobile-web-app-capable" content="yes">` in HEAD
 - Your video asset needs this attribute: webkit-playsinline
 `<video id="video" src="videos/video.mp4" muted webkit-playsinline autoplay loop></video>`
@@ -76,3 +78,7 @@ function togglePlayback () {
 </script>
 
 ```
+
+### Important Notice
+
+Don't forget to serve your files from a HTTPS secure connection, then it should work properly on iOS Safari.
