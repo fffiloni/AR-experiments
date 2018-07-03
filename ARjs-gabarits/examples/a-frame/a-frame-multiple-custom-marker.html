@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>A-Frame multiple custom markers</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script>THREEx.ArToolkitContext.baseURL = "https://rawgit.com/jeromeetienne/ar.js/master/three.js/"</script>
+
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+
+  <body style="margin : 0px; overflow: hidden;">
+
+    <a-scene embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
+
+      <!-- Pour générer des markers: https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html -->
+      <!-- NOTE: Le fond Blanc de l'image avant de genérer le fichier .patt, doit être de couleur #ddd, ça aide le tracking -->
+      <!-- NOTE: L'icône ne doit pas être symetrique dans les 4 axes et facilement reconnaissable, bien gras -->
+
+      <a-marker preset="hiro">
+
+        <a-entity gltf-model="src: url(models/gltf/model-hiro.gltf);" scale="0.1 0.1 0.1">
+          <!-- NOTE: gltf file comes with a .bin file, which needs to be in the same folder-->
+        </a-entity>
+
+      <a-marker preset="custom" type="pattern" url="markers/pattern-marker1.patt">
+         <a-entity gltf-model="src: url(models/gltf/model-custom1.gltf)" scale="0.1 0.1 0.1"></a-entity>
+       </a-marker>
+
+       <a-marker preset="custom" type="pattern" url="markers/pattern-marker2.patt">
+         <a-entity gltf-model="src: url(models/gltf/model-custom2.gltf)" scale="0.1 0.1 0.1"></a-entity>
+       </a-marker>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+
+    </a-scene>
+
+
+  </body>
+</html>
