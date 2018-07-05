@@ -23,6 +23,34 @@
 </script>
 ```
 
+### Generate your own markers
+
+To generate your own custom markers, you can use [this generator](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html), made by Jérôme Etienne.
+
+#### Prerequisites
+
+To create an efficient marker, you need to be careful of the following steps:
+*   white part of your marker should be set to a light-grey color, like #ddd for example. This will help the tracking, also remember that paper is not fully white in real life.
+*   if you want to use a custom icon, or picture, make sure it is bold enough, then put it in a corner. This will also help the tracking, telling the camera where are  the up, the bottom, the left and the right sides.
+
+#### Using your custom markers
+
+Put your .patt on your server, then call it in your index.html file like this:
+```html
+<a-marker preset="custom" type="pattern" url="path/to/your-marker.patt">
+
+  <a-entity>
+  </a-entity>
+
+</a-marker>
+```
+
+Repeat this block for each entity that you want to use a specific marker with.
+
+#### Using a QR-Code to get the adress of your web AR app
+
+To generate a Hiro Code containing a QR-Code, you can use [this generator](https://jeromeetienne.github.io/AR.js/three.js/examples/arcode.html), provided by Jérôme Etienne.
+
 ### Add Event listener on markers
 
 ```html
