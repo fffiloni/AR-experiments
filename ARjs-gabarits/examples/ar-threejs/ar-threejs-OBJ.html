@@ -112,17 +112,17 @@ function initialize() {
 	function onError(xhr) { console.log( 'An error happened' ); }
 
 	new THREE.MTLLoader()
-		.setPath( 'models/' )
-		.load( 'Mesh_Eagle.mtl', function ( materials ) {
+		.setPath( '../assets/models/OBJ/' )
+		.load( 'Zbibli_export.mtl', function ( materials ) {
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
-				.setPath( 'models/' )
-				.load( 'Mesh_Eagle.obj', function ( group ) {
+				.setPath( '../assets/models/OBJ/' )
+				.load( 'Zbibli_export.obj', function ( group ) {
 					mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
 					mesh0.position.y = 0.25;
-					mesh0.scale.set(0.01,0.01,0.01);
+					mesh0.scale.set(1,1,1);
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
       }
