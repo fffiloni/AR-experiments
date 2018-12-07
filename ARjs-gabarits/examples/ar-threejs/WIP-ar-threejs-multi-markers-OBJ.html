@@ -5,15 +5,15 @@
 	<!-- include three.js library -->
 	<script src='https://rawgit.com/stemkoski/AR-Examples/master/js/three.js'></script>
 	<!-- include jsartookit -->
-  <script src="https://rawgit.com/stemkoski/AR-Examples/master/js/OBJLoader.js"></script>
-  <script src="https://rawgit.com/stemkoski/AR-Examples/master/js/MTLLoader.js"></script>
-  <script src="https://rawgit.com/stemkoski/AR-Examples/master/jsartoolkit5/artoolkit.min.js"></script>
-	<script src="https://rawgit.com/stemkoski/AR-Examples/master/jsartoolkit5/artoolkit.api.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/js/OBJLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/js/MTLLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/jsartoolkit5/artoolkit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/jsartoolkit5/artoolkit.api.js"></script>
 	<!-- include threex.artoolkit -->
-	<script src="https://rawgit.com/stemkoski/AR-Examples/master/threex/threex-artoolkitsource.js"></script>
-	<script src="https://rawgit.com/stemkoski/AR-Examples/master/threex/threex-artoolkitcontext.js"></script>
-  	<script src="https://rawgit.com/stemkoski/AR-Examples/master/threex/threex-arbasecontrols.js"></script>
-	<script src="https://rawgit.com/stemkoski/AR-Examples/master/threex/threex-armarkercontrols.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/threex/threex-artoolkitsource.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/threex/threex-artoolkitcontext.js"></script>
+  	<script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/threex/threex-arbasecontrols.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/stemkoski/AR-Examples/threex/threex-armarkercontrols.js"></script>
 
 </head>
 
@@ -113,7 +113,7 @@ function initialize() {
 	scene.add(markerRoot1);
 
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
-		type: 'pattern', patternUrl: "https://rawgit.com/fffiloni/models-library/master/navet-pattern.patt",
+		type: 'pattern', patternUrl: "https://cdn.jsdelivr.net/gh/fffiloni/models-library/navet-pattern.patt",
 	});
 
 
@@ -154,7 +154,7 @@ function initialize() {
 	scene.add(markerRoot2);
 
 	let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
-		type: 'pattern', patternUrl: "https://rawgit.com/fffiloni/models-library/master/pattern-marker.patt",
+		type: 'pattern', patternUrl: "https://cdn.jsdelivr.net/gh/fffiloni/models-library/pattern-marker.patt",
 	});
 
 	new THREE.MTLLoader()
